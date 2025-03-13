@@ -1,0 +1,22 @@
+// =============================================================================
+// Fonts
+// =============================================================================
+
+@charset "UTF-8";
+
+// EB Garamond
+// =============================================================================
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: asset_url('EBgaramond/EBGaramond-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: asset_url('EBgaramond/EBGaramond-Bold.ttf');
+}

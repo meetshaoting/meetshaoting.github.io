@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        {% include navigation.html %}
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            {% include article/info-footer.html post=page %}
+          </header>
+
+          <div class="article-content">
+            {{ content }}
+          </div>
+
+          <div class="article-comments scrollappear">
+            <p>
+              <a href="mailto:trader0733@gmail.com"> 📮 讨论下 </a>
+            </p>
+          </div>
+
+        </article>
+        {% include footer.html %}
+      </div>
+    </div>
+  </main>
+  {% include javascripts.html %}
+</body>
+</html>

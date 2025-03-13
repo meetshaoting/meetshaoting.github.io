@@ -1,0 +1,19 @@
+<nav class="header-nav scrollappear">
+  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">{{ site.name }}</a>
+  
+</nav>
+
+
+</ul>
+  <ul class="header-tags scrollappear">
+    {% assign tags = site.tags | sort %}
+    <li><a href="{{ 'about' | relative_url }}" title="关于">关于</a></li>
+    {% for tag in tags %}
+      {% if forloop.index > 10 %}
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        {% break %}
+      {% endif %}
+      <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}">{{ tag[0] | capitalize }}</a></li>
+    {% endfor %}
+  </ul>
