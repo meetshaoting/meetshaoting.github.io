@@ -11,7 +11,9 @@ layout: default
     {% for post in site.tags[page.slug] %}
       <li class="article-list-item scrollappear">
         <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
-          <h5>{{ post.title }}</h5>
+          <h5>{{ post.title }}
+            {% include svg-icon.html icon="arrow-right" %}
+          </h5>
         </a>
         {% include article/info-footer.html post=post %}
       </li>
