@@ -12,7 +12,7 @@ Features:
   - Customizable pagination.
   - Dark and Light theme.
   - Easy setup and deploying.
-  - Enlarge images on click.
+  - Enlarge functions/functions/image.htmls on click.
   - Filter on tags.
   - Optional tag navigation.
   - Frequently updated with new versions.

@@ -6,7 +6,7 @@
 </ul>
   <ul class="header-tags scrollappear">
     {% assign tags = site.tags | sort %}
-    <li><a href="{{ 'about' | relative_url }}" title="关于" {% if page.url contains 'about' %}class="active"{% endif %}>关于</a></li>
+    <li><a href="{{ '/' | relative_url }}" title="首页" {% if page.url == '/' or page.url == '' %}class="active"{% endif %}>首页</a></li>
     {% for tag in tags %}
       {% if forloop.index > 10 %}
         <li>...</li>
@@ -14,6 +14,7 @@
         {% break %}
       {% endif %}
       {% assign encoded_tag = tag[0] | url_encode %}
-      <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}" {% if page.url contains encoded_tag or page.url contains tag[0] %}class="active"{% endif %}>{{ tag[0] | capitalize }}</a></li>
+      <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}"{% if page.url contains encoded_tag or page.url contains tag[0] or page.tags contains tag[0] %}class="active"{% endif %}>
+        {{ tag[0] | capitalize }}</a></li>
     {% endfor %}
   </ul>
