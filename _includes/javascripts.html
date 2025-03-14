@@ -8,13 +8,24 @@
   </script>
 {% endif %}
 
-{% asset vendor.js %}
+<script>
+  function generateRandomNumber() {
+  const randomNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+  // 更新所有带有 random-number class 的元素
+  const randomNumberElements = document.getElementsByClassName('random-number');
+  Array.from(randomNumberElements).forEach(element => {
+    element.textContent = `${randomNum}`;
+  });
+  // 更新页面标题
+  document.title = `{{ site.name }}${randomNum}`;
+}
+window.onload = generateRandomNumber;
+</script>
 
-{% unless site.local_fonts %}
-  {% asset webfonts.js %}
-{% endunless %}
+
+{% asset vendor.js %}
 
 {% asset scrollappear.js %}
 
-{% asset application.js %}
+{% asset main.js %}
 

@@ -3,14 +3,4 @@
     由 <a href="{{ 'about' | relative_url }}" title="About me">trader<span class="random-number"></span></a> 在杭州使用 Jekyll 和 ❤ 制作。
 </footer>
 
-<script>
-  function generateRandomNumber() {
-    const randomNum = Math.floor(Math.random() * 10000);
-    const randomNumberElements = document.getElementsByClassName('random-number');
-    Array.from(randomNumberElements).forEach(element => {
-      element.textContent = `${randomNum.toString().padStart(4, '0')}`;
-    });
-  }
-  // 页面加载时生成随机数
-  window.onload = generateRandomNumber;
-</script>
+

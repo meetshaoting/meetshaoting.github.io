@@ -3,13 +3,7 @@
 name: trader
 paginate: 100
 url: https://trader0731.github.io
-
-
-# Optional settings
-
-about_enabled: true # Change to true if you wish to show an icon in the navigation that redirects to the about page
-ga_analytics: G-JKZX03LHFF # Add your GA Tracking Id
-local_fonts: false # Change to true if you wish to use local fonts
+ga_analytics: G-JKZX03LHFF
 
 # Important settings (change at own risk)
 

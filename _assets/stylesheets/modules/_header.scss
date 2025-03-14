@@ -16,24 +16,6 @@
   text-decoration: none;
 }
 
-.header-links {
-  float: right;
-  padding: 0;
-  margin: 15px 0 0;
-  list-style: none;
-  li {
-    display: inline-block;
-    margin-left: 20px;
-    vertical-align: middle;
-    &:first-child {
-      margin-left: 0;
-    }
-    a {
-      text-decoration: none;
-    }
-  }
-}
-
 .header-tags {
   padding: 0;
   margin: 30px 0 0;
@@ -41,11 +23,25 @@
   li {
     display: inline-block;
     padding-right: 10px;
+    font-weight: 400;
     a {
       display: inline-block;
       color: $header-link-color;
       text-decoration: none;
-      &:hover { color: $header-link-color-hover; }
+      &:hover { 
+        color: $header-link-color-hover; 
+      }
+      &.active {
+        background-color: $yellow;
+        border-bottom: none;// Remove default underline
+        &::after {
+          transform: scaleX(0); // Reset underline for active state
+          display: none;// Remove animated underline completely
+        }
+        &:hover::after {
+          transform: scaleX(0); // Prevent underline on hover when active
+        }
+      }
     }
   }
 }
@@ -54,17 +50,7 @@
   .header-nav {
     text-align: center;
   }
-  .header-links {
-    display: block;
-    float: none;
-    text-align: center;
-    li {
-      margin: 0 10px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
+
   .header-tags {
     margin: 20px 0 0;
     text-align: center;
