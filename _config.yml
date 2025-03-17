@@ -30,11 +30,8 @@ exclude:
   - circle.yml
   - Gemfile
   - Gemfile.lock
-  - package.json
-  - package-lock.json
   - vendor/
   - yarn.lock
-  - 说明.md
 plugins:
   - jekyll-paginate
 paginate_path: /posts/page/:num/
@@ -43,4 +40,4 @@ encoding: utf-8
 markdown: kramdown
 kramdown:
   input: GFM
-  hard_wrap: false
+  hard_wrap: true

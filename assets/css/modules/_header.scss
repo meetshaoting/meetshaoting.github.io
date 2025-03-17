@@ -34,6 +34,7 @@
       &.active {
         background-color: $yellow;
         border-bottom: none;// Remove default underline
+        font-weight: 600;
         &::after {
           transform: scaleX(0); // Reset underline for active state
           display: none;// Remove animated underline completely
