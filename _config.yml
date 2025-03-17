@@ -7,7 +7,6 @@ ga_analytics: G-JKZX03LHFF
 
 # Important settings (change at own risk)
 
-# 新的Sass配置
 sass:
   sass_dir: assets/css
   style: compressed
@@ -16,6 +15,7 @@ collections:
   my_tags:
     output: true
     permalink: /tag/:slug/
+
 defaults:
   -
     scope:
@@ -25,13 +25,10 @@ defaults:
       layout: articles_by_tag
       encoding: utf-8
 exclude:
-  - .travis.yml
-  - bin/*
-  - circle.yml
   - Gemfile
   - Gemfile.lock
   - vendor/
-  - yarn.lock
+  
 plugins:
   - jekyll-paginate
 paginate_path: /posts/page/:num/
