@@ -61,14 +61,14 @@ $base-font-weight-bold: 600;
   font-family: 'EB Garamond';
   font-style: normal;
   font-weight: 400;
-  src: asset_url('EBGaramond-Regular.ttf');
+  src: url('/assets/fonts/EBGaramond-Regular.ttf');
 }
 
 @font-face {
   font-family: 'EB Garamond';
   font-style: normal;
   font-weight: 600;
-  src: asset_url('EBGaramond-Bold.ttf');
+  src: url('/assets/fonts/EBGaramond-Bold.ttf');
 }
 
 // Sizes

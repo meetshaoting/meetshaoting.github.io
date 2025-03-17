@@ -1,4 +1,4 @@
-//= require_self
+// 主要JavaScript功能
 
 $(document).ready(function() {
   // ScrollAppear

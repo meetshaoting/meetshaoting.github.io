@@ -7,17 +7,11 @@ ga_analytics: G-JKZX03LHFF
 
 # Important settings (change at own risk)
 
-assets:
-  plugins:
-    css: { autoprefixer: {}}
-    img: { optim: {}}
-  source_maps: false
-  sources:
-    - _assets/icons
-    - _assets/fonts
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _assets/yarn
+# 新的Sass配置
+sass:
+  sass_dir: assets/css
+  style: compressed
+
 collections:
   my_tags:
     output: true
@@ -42,9 +36,7 @@ exclude:
   - yarn.lock
   - 说明.md
 plugins:
-  - jekyll-assets
   - jekyll-paginate
-  - jemoji
 paginate_path: /posts/page/:num/
 permalink: posts/:slug
 encoding: utf-8

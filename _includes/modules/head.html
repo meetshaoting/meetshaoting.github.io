@@ -21,13 +21,14 @@
       <meta property="og:image" content="{{ page.thumb_image }}">
       <meta name="twitter:image" content="{{ page.thumb_image }}">
     {% else %}
-      <meta property="og:image" content="{{ site.url }}{% asset '{{ page.thumb_image }}' @path %}">
-      <meta name="twitter:image" content="{{ site.url }}{% asset '{{ page.thumb_image }}' @path %}">
+      <meta property="og:image" content="{{ site.url }}/assets/images/{{ page.thumb_image }}">
+      <meta name="twitter:image" content="{{ site.url }}/assets/images/{{ page.thumb_image }}">
     {% endif %}
   {% else %}
-    <meta property="og:image" content="{{ site.url }}{% asset og-image.jpg @path %}">
-    <meta name="twitter:image" content="{{ site.url }}{% asset og-image.jpg @path %}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/og-image.jpg">
   {% endif %}
 
-  <link rel="stylesheet" type="text/css" title="light" id="light" href="{% asset main.css @path%}">
+  <link rel="stylesheet" type="text/css" title="light" id="light" href="{{ '/assets/css/main.css' | relative_url }}">
+
 </head>
