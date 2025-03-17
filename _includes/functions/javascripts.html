@@ -8,6 +8,7 @@
   </script>
 {% endif %}
 
+<!-- 随机数生成器 -->
 <script>
   function generateRandomNumber() {
   const randomNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
@@ -22,9 +23,52 @@
 window.onload = generateRandomNumber;
 </script>
 
-<script src="{{ '/assets/js/vendor.js' | relative_url }}"></script>
+<!-- JavaScript依赖 -->
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/zooming.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/retina.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/svgxuse.min.js' | relative_url }}"></script>
 
-<script src="{{ '/assets/js/scrollappear.js' | relative_url }}"></script>
+<!-- ScrollAppear插件和主要功能 -->
+<script>
+// ScrollAppear 插件定义
+;(function ($) {
+  var els = [];
 
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  var refreshVisibility = function() {
+    $.each(els, function() {
+      if ($(this)[0].getBoundingClientRect().top < $(window).height()) {
+        $(this).addClass('appeared');
+      }
+    });
+  };
+
+  $.fn.scrollAppear = function() {
+    this.each(function() {
+      els.push($(this));
+      $(this).addClass('appear');
+    });
+
+    refreshVisibility();
+
+    $(window).scroll(function() {
+      refreshVisibility();
+    });
+    return this;
+  };
+}(jQuery));
+
+// 主要JavaScript功能初始化
+$(document).ready(function() {
+  // ScrollAppear
+  if (typeof $.fn.scrollAppear === 'function') {
+    $('.scrollappear').scrollAppear();
+  }
+
+  // Zooming
+  new Zooming(
+    {customSize: '100%', scaleBase: 0.9, scaleExtra: 0}
+  ).listen('.zooming');
+});
+</script>
 
