@@ -40,7 +40,7 @@
   margin: 30px 0;
   overflow: auto;
   font-weight: 400;
-  background: lighten($gray-lightest, 6);
+  background: lighten($gray, 6);
   border-radius: $base-border-radius;
   pre {
     margin: 0;
@@ -53,8 +53,8 @@
   padding: 2px 4px;
   font-size: 14px;
   color: #d14;
-  background: lighten($gray-lightest, 6);
-  border: 1px solid $base-border-color;
+  background: lighten($gray, 6);
+  border: 1px solid $gray;
   border-radius: 1px;
 }
 

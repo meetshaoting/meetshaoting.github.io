@@ -21,8 +21,8 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  color: $base-font-color;
-  background: $body-background;
+  color: $black;
+  background: $white;
 }
 
 // Typography
@@ -53,7 +53,7 @@ h6 {
 h1 {
   font-size: $base-font-size * 1.5;
   letter-spacing: -.03em;
-  color: $article-header-title-color;
+  color: $black;
 }
 
 h2 {
@@ -91,35 +91,34 @@ h6 {
 
 a:not(.header-logo) {
   position: relative;
-  color: $base-accent-color;
+  color: $gray;
   text-decoration: none;
-  border-bottom: 1px solid $gray-lighter;
   transition: color $base-transition-speed linear;
   &:hover {
-    color: $base-accent-color; 
+    color: $black; 
   }
   &:hover::after {
     transform: scaleX(1);
     transform-origin: left;
   }
   &:focus {
-    color: $base-accent-color;
+    color: $gray;
     outline: none;
   }
   &:active {
-    color: $base-accent-highlighted-color !important;// 使用 !important 确保优先级
+    color: $gray !important;// 使用 !important 确保优先级
   }
   &::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 1px;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     background-color: currentColor;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s ease;
+    transition: transform $base-transition-speed ease;
   }
   
 
@@ -127,7 +126,7 @@ a:not(.header-logo) {
 }
 
 svg {
-  transition: fill 0.2s linear;
+  transition: fill $base-transition-speed linear;
 }
 
 ul,
@@ -138,7 +137,7 @@ ol {
 
 abbr {
   cursor: help;
-  border-bottom: 1px dotted $base-border-color;
+  border-bottom: 1px dotted $gray;
 }
 
 blockquote {
@@ -147,8 +146,8 @@ blockquote {
   font-size: 20px;
   font-style: italic;
   line-height: 1.6;
-  color: $gray-light;
-  border-left: 3px solid $gray-dark;
+  color: $gray;
+  border-left: 3px solid $gray;
 }
 
 // Other
@@ -158,7 +157,7 @@ hr {
   margin: 0;
   border-top: 0;
   border-right: 0;
-  border-bottom: 1px solid $base-border-color;
+  border-bottom: 1px solid $gray;
   border-left: 0;
 }
 
@@ -176,5 +175,5 @@ img {
 
 ::selection {
   color: $white;
-  background-color: $gray-darkest;
+  background-color: $black;
 }

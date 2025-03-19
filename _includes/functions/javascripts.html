@@ -29,7 +29,6 @@ window.onload = generateRandomNumber;
 <script src="{{ '/assets/js/retina.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/svgxuse.min.js' | relative_url }}"></script>
 
-<!-- ScrollAppear插件和主要功能 -->
 <script>
 // ScrollAppear 插件定义
 ;(function ($) {
@@ -69,6 +68,64 @@ $(document).ready(function() {
   new Zooming(
     {customSize: '100%', scaleBase: 0.9, scaleExtra: 0}
   ).listen('.zooming');
+
+  // 标签点击处理
+  const tagLinks = $('.header-tags a');
+  tagLinks.on('click', function(e) {
+    if ($(this).hasClass('active')) {
+      e.preventDefault();
+      window.location.href = '/';
+    }
+  });
 });
 </script>
 
+
+<!-- 滚动加载更多文章 -->
+<script>
+$(document).ready(function() {
+  const articleItems = $('.article-list-item');
+  const totalItems = articleItems.length;
+  const itemsPerPage = 10;
+  let currentlyShown = itemsPerPage;
+  let isLoading = false;
+  
+  // 初始化 - 只显示前10篇文章
+  if (totalItems > itemsPerPage) {
+    articleItems.slice(itemsPerPage).hide();
+    
+    // 添加加载更多指示器
+    const loadMoreIndicator = $('<div id="load-more-indicator" class="scrollappear" style="text-align: center; padding: 20px 0; display:none;"><div class="article-loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div></div>');
+    $('.article-list').after(loadMoreIndicator);
+    
+    // 添加滚动监听
+    $(window).on('scroll', function() {
+      if (currentlyShown >= totalItems || isLoading) {
+        return; // 已加载全部或正在加载中
+      }
+      
+      // 检测是否滚动到页面底部
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+        isLoading = true;
+        loadMoreIndicator.show();
+        
+        // 模拟加载延迟
+        setTimeout(function() {
+          // 显示下一组文章
+          const nextBatch = articleItems.slice(currentlyShown, currentlyShown + itemsPerPage);
+          nextBatch.fadeIn(500);
+          currentlyShown += nextBatch.length;
+          
+          // 恢复状态
+          isLoading = false;
+          
+          // 如果所有文章已显示，隐藏加载指示器
+          if (currentlyShown >= totalItems) {
+            loadMoreIndicator.hide();
+          }
+        }, 500);
+      }
+    });
+  }
+});
+</script>

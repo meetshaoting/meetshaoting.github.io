@@ -13,7 +13,7 @@ title: "放作品的网站。"
 </div>
 
 <ul class="article-list">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
     <li class="article-list-item scrollappear">
       <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
         <h5>
@@ -30,14 +30,4 @@ title: "放作品的网站。"
       {% include modules/description.html post=post %}
     </li>
   {% endfor %}
-  {% if paginator.total_pages > 1 %}
-    <li class="article-pagination scrollappear">
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="article-pagination-left">{% include functions/svg-icon.html icon="arrow-left" %} Older posts</a>
-      {% endif %}
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="article-pagination-right">Newer posts {% include functions/svg-icon.html icon="arrow-right" %}</a>
-      {% endif %}
-    </li>
-  {% endif %}
 </ul>

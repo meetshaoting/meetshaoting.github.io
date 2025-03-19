@@ -8,21 +8,24 @@
 
 // functions
 
-@import "./functions/normalize";
-@import "./functions/mixins";
-@import "./functions/scrollappear";
+@import "functions/normalize";
+@import "functions/mixins";
 
 // Layouts
 
-@import "./layouts/variables";
-@import "./layouts/grid";
-@import "./layouts/base";
+@import "layouts/variables";
+@import "layouts/grid";
+@import "layouts/base";
+
+// functions
+@import "functions/scrollappear";
+
 
 // Modules
 
-@import "./modules/footer";
-@import "./modules/about";
-@import "./modules/articles";
-@import "./modules/embed";
-@import "./modules/header";
-@import "./modules/tags";
+@import "modules/footer";
+@import "modules/about";
+@import "modules/articles";
+@import "modules/embed";
+@import "modules/header";
+@import "modules/tags";

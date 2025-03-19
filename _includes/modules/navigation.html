@@ -6,7 +6,6 @@
 </ul>
   <ul class="header-tags scrollappear">
     {% assign tags = site.tags | sort %}
-    <li><a href="{{ '/' | relative_url }}" title="首页" {% if page.url == '/' or page.url == '' %}class="active"{% endif %}>首页</a></li>
     {% for tag in tags %}
       {% if forloop.index > 10 %}
         <li>...</li>

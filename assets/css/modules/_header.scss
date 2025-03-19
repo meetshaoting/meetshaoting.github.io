@@ -12,7 +12,7 @@
   font-family: $serif;
   font-size: $base-font-size * 1.75;
   font-weight: 400;
-  color: $header-logo-color;
+  color: $black;
   text-decoration: none;
 }
 
@@ -22,19 +22,45 @@
   list-style: none;
   li {
     display: inline-block;
-    padding-right: 10px;
+    padding-right: 20px;
     font-weight: 400;
     a {
       display: inline-block;
-      color: $header-link-color;
+      color: $gray;
       text-decoration: none;
-      &:hover { 
-        color: $header-link-color-hover; 
+      white-space: nowrap;
+      
+      // 所有标签的#号样式
+      &::before {
+        content: '#';
+        display: inline-block;
+        margin-right: -2px;
+        color: $gray;
+        font-size: 1.2em;
+        font-weight: 600;
+        position: relative;
+        bottom: 1px;
+        transition: color $base-transition-speed linear;
       }
+      
+      // hover状态
+      &:hover { 
+        color: $black; 
+        &:hover::before {
+          color: $black;
+        }
+      }
+
       &.active {
         background-color: $yellow;
         border-bottom: none;// Remove default underline
         font-weight: 600;
+        border-radius: 5px;
+        padding: 0 5px;
+        color: $black;
+        &::before {
+          color: $black;
+        } 
         &::after {
           transform: scaleX(0); // Reset underline for active state
           display: none;// Remove animated underline completely

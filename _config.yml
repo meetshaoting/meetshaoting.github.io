@@ -1,7 +1,6 @@
 # Mandatory settings
 
 name: trader
-paginate: 100
 url: https://trader0731.github.io
 ga_analytics: G-JKZX03LHFF
 
@@ -30,8 +29,7 @@ exclude:
   - vendor/
   
 plugins:
-  - jekyll-paginate
-paginate_path: /posts/page/:num/
+
 permalink: posts/:slug
 encoding: utf-8
 markdown: kramdown
