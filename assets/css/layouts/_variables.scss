@@ -2,6 +2,8 @@
 // Theme variables
 // =============================================================================
 
+@charset "UTF-8";
+
 
 // Colors
 // =============================================================================
@@ -10,6 +12,7 @@
 
 $black: #333;
 $gray: #777;
+$light-gray: #eee;
 $white: #fff;
 $yellow: #fff999;
 
@@ -22,8 +25,6 @@ $serif: "EB Garamond", Courier, serif;
 $base-font-family: $serif;
 $base-font-weight: 400;
 $base-font-weight-bold: 600;
-
-@charset "UTF-8";
 
 // EB Garamond
 // =============================================================================
