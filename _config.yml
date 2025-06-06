@@ -27,8 +27,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/
-  
-plugins:
+
+plugins: []
 
 permalink: posts/:slug
 encoding: utf-8
