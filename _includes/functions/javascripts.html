@@ -25,6 +25,7 @@ window.onload = generateRandomNumber;
 
 <!-- JavaScript依赖 -->
 <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/zooming.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/retina.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/svgxuse.min.js' | relative_url }}"></script>
 
@@ -62,6 +63,11 @@ $(document).ready(function() {
   if (typeof $.fn.scrollAppear === 'function') {
     $('.scrollappear').scrollAppear();
   }
+
+  // Zooming
+  new Zooming(
+    {customSize: '100%', scaleBase: 0.9, scaleExtra: 0}
+  ).listen('.zooming');
 
   // 标签点击处理
   const tagLinks = $('.header-tags a');
