@@ -8,20 +8,6 @@
   </script>
 {% endif %}
 
-<!-- 随机数生成器 -->
-<script>
-  function generateRandomNumber() {
-  const randomNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-  // 更新所有带有 random-number class 的元素
-  const randomNumberElements = document.getElementsByClassName('random-number');
-  Array.from(randomNumberElements).forEach(element => {
-    element.textContent = `${randomNum}`;
-  });
-  // 更新页面标题
-  document.title = `{{ site.name }}${randomNum}`;
-}
-window.onload = generateRandomNumber;
-</script>
 
 <!-- JavaScript依赖 -->
 <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
