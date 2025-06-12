@@ -8,9 +8,13 @@
         {% include modules/navigation.html %}
         <article class="article scrollappear">
           <header class="article-header">
-            <h1>{{ page.title }}</h1>
+            {% if page.title != 'Dairy' %}
+              <h1>{{ page.title }}</h1>
+            {% endif %}
             <p>{{ page.description }}</p>
-            {% include modules/description.html post=page %}
+            {% if page.title != 'Dairy' %}
+              {% include modules/description.html post=page %}
+            {% endif %}
           </header>
 
           <div class="article-content">

@@ -5,28 +5,8 @@ title: "portfolio"
 <div class="about scrollappear">
   <p>
     你所观看的是一个原本力求在生活中保持匿名之人的作品网站。这种身份的偏执，是个体对如何面对时代、如何处理信息爆炸又如何建立秩序、以及为何需要秩序，意志、存在和应然，一种朴素甚至老土了的焦虑，已经不时尚了的困境。而随着年龄的增长，这焦虑却一直不曾停歇，于是终于在某天，决定着手处理它。通过搭建一个公开的网站，并呈现一些此刻出现在该网站中的项目，将此类困境固定并排出，以达成最终克服了的感觉。<br>
-    男。90 后。冷、面瘫、不胜酒力。大部分清醒的时间被杭州某互联网公司当作一名产品经理而买断。除此之外，饮食、睡眠、带娃、游泳，以及捯饬在这个网站所呈现的一切。<br><br>
+    男。90 后。冷淡、面瘫、不胜酒力。大部分清醒的时间被杭州某互联网公司当作一名产品经理而买断。除此之外，饮食、睡眠、带娃、游泳，以及捯饬在这个网站所呈现的一切。<br><br>
     <a href="mailto:meetshaoting@gmail.com"?subject=你好。" title="Email">📮：meetshaoting.gmail.com</a> <br>
     <a href="weixin://" onclick="alert('在微信中联系我')"title="Wechat">💬：meetshaoting</a>
   </p>
 </div>
-
-<ul class="article-list">
-  {% for post in site.posts %}
-    <li class="article-list-item scrollappear">
-      <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
-        <h5>
-          {{ post.title }}
-        </h5>
-      </a>
-      <p>
-        {% if post.description %}
-          {{ post.description }}  
-        {% else %}
-          {{ post.excerpt }}
-        {% endif %}
-      </p>
-      {% include modules/description.html post=post %}
-    </li>
-  {% endfor %}
-</ul>

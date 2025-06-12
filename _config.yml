@@ -15,6 +15,12 @@ collections:
     output: true
     permalink: /tag/:slug/
 
+tag_order:
+  - 结构研究系列
+  - 诗
+  - 小说
+
+
 defaults:
   -
     scope:

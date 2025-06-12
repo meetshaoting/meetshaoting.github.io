@@ -1,19 +1,23 @@
 <nav class="header-nav scrollappear">
-  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">{{ site.name }}<span class="random-number"></span></a>
+  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">{{ site.name }}</a>
 </nav>
 
-
-</ul>
-  <ul class="header-tags scrollappear">
-    {% assign tags = site.tags | sort %}
-    {% for tag in tags %}
-      {% if forloop.index > 10 %}
-        <li>...</li>
-        <li><a href="/tags">Show all</a></li>
-        {% break %}
+<ul class="header-tags scrollappear">
+  {% assign sorted_tags = "" | split: "" %}
+  
+  {% for tag_name in site.tag_order %}
+    {% for site_tag in site.tags %}
+      {% if site_tag[0] == tag_name %}
+        {% assign sorted_tags = sorted_tags | push: site_tag %}
       {% endif %}
-      {% assign encoded_tag = tag[0] | url_encode %}
-      <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}"{% if page.url contains encoded_tag or page.url contains tag[0] %}class="active"{% endif %}>
-        {{ tag[0] | capitalize }}</a></li>
     {% endfor %}
-  </ul>
+  {% endfor %}
+  
+  {% for tag in sorted_tags %}
+    {% assign encoded_tag = tag[0] | url_encode %}
+    <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}"{% if page.url contains encoded_tag or page.url contains tag[0] %}class="active"{% endif %}>
+      {{ tag[0] | capitalize }}</a></li>
+  {% endfor %}
+  <li><a href="/posts/dairy"{% if page.url contains 'dairy' %}class="active"{% endif %}>
+    日志</a></li>
+</ul>
