@@ -25,6 +25,10 @@ body {
   background: $white;
 }
 
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
 // Typography
 // =============================================================================
 
