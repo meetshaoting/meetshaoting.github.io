@@ -23,20 +23,13 @@
 }
 
 .article-list-item {
-  a {
+  h5 {
     text-decoration: none;
-    h5 {
-      position: relative;
-      display: block;
-      padding-right: 25px;
+    position: relative;
+    display: block;
+    padding-right: 25px;
+    a {
       color: $black;
-      svg {
-        width: 14px;
-        height: 14px;
-        vertical-align: middle;
-        margin: -2px 8px 0 0px;
-        fill: $black;
-      }
     }
   }
   p {

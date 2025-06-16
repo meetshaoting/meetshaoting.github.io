@@ -10,10 +10,10 @@ layout: default
   <ul class="article-list scrollappear">
     {% for post in site.tags[page.slug] %}
       <li class="article-list-item scrollappear">
-        <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
-          <h5>
-            {{ post.title }}
-          </h5>
+        <h5>
+          <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
+          {{ post.title }}
+        </h5>
         </a>
       <p>
         {% if post.description %}
