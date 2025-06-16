@@ -124,9 +124,16 @@ a:not(.header-logo) {
     transform-origin: left;
     transition: transform $base-transition-speed ease;
   }
-  
+}
 
-
+// 添加新的样式规则
+a:has(img.zooming) {
+  &::after {
+    display: none;
+  }
+  &:hover::after {
+    display: none;
+  }
 }
 
 svg {
