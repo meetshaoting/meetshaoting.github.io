@@ -136,10 +136,6 @@ a:has(img.zooming) {
   }
 }
 
-svg {
-  transition: fill $base-transition-speed linear;
-}
-
 ul,
 ol {
   padding-left: 40px;
