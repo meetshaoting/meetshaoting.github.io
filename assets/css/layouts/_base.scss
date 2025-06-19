@@ -145,7 +145,7 @@ ol {
 
 abbr {
   cursor: help;
-  border-bottom: 1px dotted $gray;
+  border-bottom: 1px dotted $light-gray;
 }
 
 blockquote {
@@ -154,8 +154,8 @@ blockquote {
   font-size: 20px;
   font-style: italic;
   line-height: 1.6;
-  color: $gray;
-  border-left: 3px solid $gray;
+  color: $light-gray;
+  border-left: 3px solid $light-gray;
 }
 
 // Other
