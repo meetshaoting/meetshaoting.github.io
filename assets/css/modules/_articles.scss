@@ -35,7 +35,6 @@
   p {
     display: block;
     margin: 12px 0 10px;
-    font-size: 15px;
     color: $black;
   }
 }
@@ -45,7 +44,7 @@
   span,
   a {
     display: inline-block;
-    font-size: 12px;
+    font-size: $base-font-size * 0.9;
     color: $black;
     text-transform: uppercase;
     vertical-align: middle;
