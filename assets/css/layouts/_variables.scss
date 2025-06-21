@@ -10,12 +10,10 @@
 
 // Basic colors
 
-$black: #111;
-$gray: #666;
+$black: #222;
+$gray: #777;
 $light-gray: #eee;
 $white: #fff;
-$yellow: #fff999;
-
 
 // Typography
 // =============================================================================
@@ -65,13 +63,13 @@ $base-font-weight-bold: 600;
 
 $columns: 12;
 $max-width: 650px;
-$gutter: 20px;
+$gutter: 10px;
 $one-column: 100% / $columns;
 $negative-gutter: 0 - $gutter;
 
 // Font sizes
 
-$base-font-size: 18px;
+$base-font-size: 15px;
 $base-line-height: 1.8;
 
 // Box sizes

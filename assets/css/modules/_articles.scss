@@ -55,9 +55,9 @@
     white-space: nowrap;
     &::before {
       content: '#';
-      font-size: 1.4em;
+      font-size: $base-font-size * 1.1;
       display: inline;
-      margin-right: -1px;
+      margin-right: 1px;
       color: $gray;
       transition: color $base-transition-speed linear;
     }

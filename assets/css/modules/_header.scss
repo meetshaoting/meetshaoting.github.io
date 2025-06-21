@@ -10,7 +10,7 @@
 .header-logo {
   display: inline-block;
   font-size: $base-font-size * 2;
-  font-weight: 400;
+  font-weight: $base-font-weight;
   color: $black;
   text-decoration: none;
 }
@@ -22,7 +22,7 @@
   li {
     display: inline-block;
     padding-right: 20px;
-    font-weight: 400;
+    font-weight: $base-font-weight;
     a {
       display: inline-block;
       color: $gray;
@@ -35,8 +35,8 @@
         display: inline-block;
         margin-right: -2px;
         color: $gray;
-        font-size: 1.2em;
-        font-weight: 600;
+        font-size: $base-font-size * 1.2;
+        font-weight: $base-font-weight-bold;
         position: relative;
         bottom: 1px;
         transition: color $base-transition-speed linear;
@@ -51,14 +51,14 @@
       }
 
       &.active {
-        background-color: $yellow;
+        background-color: $black;
         border-bottom: none;// Remove default underline
-        font-weight: 600;
+        font-weight: $base-font-weight-bold;
         border-radius: 5px;
         padding: 0 5px;
-        color: $black;
+        color: $white;
         &::before {
-          color: $black;
+          color: $white;
         } 
         &::after {
           transform: scaleX(0); // Reset underline for active state
